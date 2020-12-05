@@ -1,5 +1,9 @@
 # ramverk-projekt
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mangepong/ramverk-projekt/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/mangepong/ramverk-projekt/?branch=main)
+
+[![CircleCI](https://circleci.com/gh/mangepong/ramverk-projekt.svg?style=svg)](https://circleci.com/gh/mangepong/ramverk-projekt)
+
 ### Download and install
 
 Start by cloning the repo:

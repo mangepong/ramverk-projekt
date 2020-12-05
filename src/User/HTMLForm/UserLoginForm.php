@@ -26,13 +26,13 @@ class UserLoginForm extends FormModel
                 "legend" => "Logga in"
             ],
             [
-                "user" => [
+                "Användarnamn" => [
                     "type"        => "text",
                     //"description" => "Here you can place a description.",
                     //"placeholder" => "Here is a placeholder",
                 ],
 
-                "password" => [
+                "Lösendord" => [
                     "type"        => "password",
                     //"description" => "Here you can place a description.",
                     //"placeholder" => "Here is a placeholder",
@@ -64,8 +64,8 @@ class UserLoginForm extends FormModel
     public function callbackSubmit()
     {
         // Get values from the submitted form
-        $acronym       = $this->form->value("user");
-        $password      = $this->form->value("password");
+        $acronym       = $this->form->value("Användarnamn");
+        $password      = $this->form->value("Lösendord");
 
         $user = new User();
         $user->setDb($this->di->get("dbqb"));

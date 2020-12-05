@@ -2,10 +2,10 @@
 Om
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/about.md`.
+Denna sidan är skapad som projekt till kursen ramverk1 av mig Emil Magnusson
 
-Skriv några kloka ord om kursen?
+#### Zypher
+Denna sidan är inspererad av reddit och fungerar så att man kan skapa en användare, ställa frågor, svara samt kommentera de olika inläggen/frågorna
 
-Lägg till en representativ bild för kursen, enligt ditt egna val.
-
-[FIGURE src=image/car.png?w=300 caption="En fin bil som demobild."]
+#### Github
+Denna sidan ligger också uppe på Github som du kan hitta [här](https://github.com/mangepong/ramverk-projekt).

@@ -168,7 +168,7 @@ class UserController implements ContainerInjectableInterface
         ]);
 
         return $page->render([
-            "title" => "A login page",
+            "title" => "Logga in",
         ]);
     }
 

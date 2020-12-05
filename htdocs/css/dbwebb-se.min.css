@@ -31,7 +31,15 @@ body {
 a, p, h1, h2, h3, h4 {
     font-family: 'Roboto', sans-serif;
 }
+a:link {
+    color: black;
+    /* text-decoration: none; */
+}
 
+a:visited {
+    color: black;
+    /* text-decoration: none; */
+}
  .article {
      margin-top: 10px;
      border-radius: 10px;
@@ -51,4 +59,54 @@ a, p, h1, h2, h3, h4 {
 
 .comment {
     margin-left: 20%;
+}
+
+.userQuestTitleLink {
+    font-size: 22px;
+}
+
+.questText {
+    border: solid black 1px;
+    padding: 5px;
+    box-shadow: 2px 2px #888888;
+    border-radius: 10px;
+}
+
+.showQuestion {
+    margin-top: 10px;
+    border-bottom: solid black 1px;
+}
+
+.profileImg {
+    width: 50px;
+    float: left;
+}
+
+.startAcro {
+    margin-left: 70px;
+}
+
+.startUser {
+    float: left;
+}
+
+.divUser {
+    margin-top: 20px;
+    display: grid;
+    border-bottom: solid black 1px;
+}
+
+.userProfile img {
+    width: 100px;
+    float: none;
+}
+
+.pageTag {
+    text-decoration: none;
+    border: solid black 1px;
+    padding: 2px;
+}
+
+.pageTag:hover {
+    background-color: grey;
 }

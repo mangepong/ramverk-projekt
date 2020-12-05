@@ -16,7 +16,7 @@ return [
         "data" => [
             "baseTitle" => " | Zypher",
             "bodyClass" => null,
-            "favicon" => "favicon.ico",
+            "favicon" => "favicon.png",
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [

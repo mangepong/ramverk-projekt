@@ -39,7 +39,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function initialize() : void
+    public function initialize(): void
     {
         $this->filter = new Filter();
     }
@@ -55,7 +55,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function indexActionGet() : object
+    public function indexActionGet(): object
     {
         $currUser = $this->di->session->get('loggedIn');
         if (!$currUser) {
@@ -74,7 +74,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function profileAction(int $id) : object
+    public function profileAction(int $id): object
     {
         $page = $this->di->get("page");
         $user = new User();
@@ -90,7 +90,7 @@ class UserController implements ContainerInjectableInterface
         $question = new Question();
         $question->setDb($this->di->get("dbqb"));
         $Questions = $question->findAllWhere("userId = ?", $id);
-        foreach($Questions as $quest) {
+        foreach ($Questions as $quest) {
             $parsedText = $this->filter->markdown($quest->text);
             $page->add("user/userQuestion", [
                 "question" => $quest,
@@ -105,7 +105,7 @@ class UserController implements ContainerInjectableInterface
         $answer->setDb($this->di->get("dbqb"));
         $Answers = $answer->findAllWhere("userId = ?", $id);
 
-        foreach($Answers as $answer) {
+        foreach ($Answers as $answer) {
             $question = new Question();
             $question->setDb($this->di->get("dbqb"));
             $question->find("id", $answer->questionid);
@@ -124,7 +124,7 @@ class UserController implements ContainerInjectableInterface
         $comment->setDb($this->di->get("dbqb"));
         $Comments = $comment->findAllWhere("userId = ?", $id);
 
-        foreach($Comments as $comment) {
+        foreach ($Comments as $comment) {
             $question = new Question();
             $question->setDb($this->di->get("dbqb"));
             $question->find("id", $comment->questionid);
@@ -153,7 +153,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function loginAction() : object
+    public function loginAction(): object
     {
         if ($this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("user");
@@ -183,7 +183,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function createAction() : object
+    public function createAction(): object
     {
         if ($this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("login");
@@ -211,7 +211,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function editAction() : object
+    public function editAction(): object
     {
         if (!$this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("user/login");
@@ -244,7 +244,7 @@ class UserController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function logoutAction() : object
+    public function logoutAction(): object
     {
         if (!$this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("user");

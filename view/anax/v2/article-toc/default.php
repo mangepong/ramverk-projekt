@@ -1,10 +1,11 @@
 <?php
 
-namespace Anax\View;
-
 /**
  * Render a meta footer for the blog.
  */
+
+namespace Anax\View;
+
 
 // Show incoming variables and view helper functions
 //echo showEnvironment(get_defined_vars(), get_defined_functions());
@@ -29,7 +30,7 @@ $title = isset($title) && !empty($title)
 ?><div <?= classList($classes) ?>>
 
     <h4><?= $title ?></h4>
-    
+
     <ul class="toc">
         <?php foreach ($articleToc as $item) : ?>
         <li class="level-<?= $item["level"] ?>"><a href="#<?= $item["id"] ?>"><?= $item["title"] ?></a></li>

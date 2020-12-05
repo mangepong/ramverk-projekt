@@ -51,5 +51,4 @@ class User extends BonusActiveRecordModel
         $this->find("acronym", $acronym);
         return password_verify($password, $this->password);
     }
-
 }

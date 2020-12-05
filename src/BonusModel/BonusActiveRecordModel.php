@@ -132,7 +132,4 @@ class BonusActiveRecordModel extends ActiveRecordModel
             ->execute()
             ->fetchAllClass(get_class($this));
     }
-
-
-
 }

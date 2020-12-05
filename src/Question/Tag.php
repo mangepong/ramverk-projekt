@@ -21,5 +21,4 @@ class Tag extends BonusActiveRecordModel
      */
     public $id;
     public $text;
-
 }

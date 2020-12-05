@@ -39,7 +39,7 @@ class StartController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function initialize() : void
+    public function initialize(): void
     {
         $this->filter = new Filter();
     }
@@ -55,7 +55,7 @@ class StartController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function indexActionGet() : object
+    public function indexActionGet(): object
     {
         $page = $this->di->get("page");
 
@@ -66,7 +66,7 @@ class StartController implements ContainerInjectableInterface
         $question->setDb($this->di->get("dbqb"));
         $allQuestions = $question->findAllOrderBy("created DESC", 3);
 
-        foreach($allQuestions as $question) {
+        foreach ($allQuestions as $question) {
             $user = new User();
             $user->setDb($this->di->get("dbqb"));
             $userInfo = $user->find('id', $question->userId);
@@ -92,7 +92,7 @@ class StartController implements ContainerInjectableInterface
 
         $user = new User();
         $user->setDb($this->di->get("dbqb"));
-        $top3Users = $user->findAllOrderBy("created DESC",  3);
+        $top3Users = $user->findAllOrderBy("created DESC", 3);
 
         $page->add("start/topUsers", [
             "allUsers" => $top3Users,
@@ -114,7 +114,7 @@ class StartController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function questionActionPost() : void
+    public function questionActionPost(): void
     {
         $id          = $this->di->session->get('loggedIn');
         $text        = $this->di->request->getPost("Kommentera");

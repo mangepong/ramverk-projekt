@@ -1,9 +1,10 @@
 <?php
+
 namespace mange\Filter;
 
-
-class filter
+class Filter
 {
+
     /**
      * Helper, Markdown formatting converting to HTML.
      *
@@ -11,6 +12,7 @@ class filter
      * @SuppressWarnings(PHPMD.StaticAccess)
      * @return string the formatted text.
      */
+
     public function markdown($text)
     {
         $text = \Michelf\MarkdownExtra::defaultTransform($text);

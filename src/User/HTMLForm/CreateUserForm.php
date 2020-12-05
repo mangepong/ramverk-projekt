@@ -72,7 +72,7 @@ class CreateUserForm extends FormModel
         $createdDate   = date("Y/m/d G:i:s", time());
 
         // Check password matches
-        if ($password !== $passwordAgain ) {
+        if ($password !== $passwordAgain) {
             $this->form->rememberValues();
             $this->form->addOutput("Password did not match.");
             return false;

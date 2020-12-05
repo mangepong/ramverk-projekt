@@ -79,7 +79,7 @@ class EditUserForm extends FormModel
         $updatedDate   = date("Y/m/d G:i:s", time());
 
         // Check password matches
-        if ($newpasswd !== $oldpasswd ) {
+        if ($newpasswd !== $oldpasswd) {
             $this->form->rememberValues();
             $this->form->addOutput("Det nya lösenordet matchar ej.");
             return false;
@@ -91,7 +91,7 @@ class EditUserForm extends FormModel
         $user->find("id", $id);
         if ($newpasswd) {
             // Check password matches
-            if ($newpasswd !== $oldpasswd ) {
+            if ($newpasswd !== $oldpasswd) {
                 $this->form->rememberValues();
                 $this->form->addOutput("Det nya lösenordet matchar ej.");
                 return false;

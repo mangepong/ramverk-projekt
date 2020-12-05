@@ -36,7 +36,7 @@ class TagsController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function initialize() : void
+    public function initialize(): void
     {
         $this->filter = new Filter();
     }
@@ -52,7 +52,7 @@ class TagsController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function indexActionGet() : object
+    public function indexActionGet(): object
     {
 
         $page = $this->di->get("page");
@@ -62,7 +62,7 @@ class TagsController implements ContainerInjectableInterface
         $dupTags = $TagQuestion->findAll();
         $allTags = array();
 
-        foreach($dupTags as $Tag) {
+        foreach ($dupTags as $Tag) {
             if (!in_array($Tag->text, $allTags)) {
                 $allTags[] = $Tag->text;
             }
@@ -96,7 +96,7 @@ class TagsController implements ContainerInjectableInterface
 
         $fltrQst = $TagQuestion->findAllWhere("text = ?", $tag);
 
-        foreach($fltrQst as $qst) {
+        foreach ($fltrQst as $qst) {
             $user = new User();
             $Question = new Question();
             $user->setDb($this->di->get("dbqb"));

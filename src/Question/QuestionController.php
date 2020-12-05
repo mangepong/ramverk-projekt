@@ -39,7 +39,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function initialize() : void
+    public function initialize(): void
     {
         $this->filter = new Filter();
     }
@@ -55,7 +55,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function indexActionGet() : object
+    public function indexActionGet(): object
     {
 
         $page = $this->di->get("page");
@@ -68,7 +68,7 @@ class QuestionController implements ContainerInjectableInterface
             "allQuestions" => $allQuestions,
         ]);
 
-        foreach($allQuestions as $question) {
+        foreach ($allQuestions as $question) {
             $user = new User();
             $user->setDb($this->di->get("dbqb"));
             $userInfo = $user->find('id', $question->userId);
@@ -100,7 +100,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function createAction() : object
+    public function createAction(): object
     {
         if (!$this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("user/login");
@@ -159,7 +159,7 @@ class QuestionController implements ContainerInjectableInterface
         $comment->setDb($this->di->get("dbqb"));
         $allComments = $comment->findAllWhere("questionid = ? and answerid = ?", [$id, '']);
 
-        foreach($allComments as $oneComment) {
+        foreach ($allComments as $oneComment) {
             $user = new User();
             $user->setDb($this->di->get("dbqb"));
             $userInfo = $user->find('id', $oneComment->userId);
@@ -176,7 +176,7 @@ class QuestionController implements ContainerInjectableInterface
         $answer->setDb($this->di->get("dbqb"));
         $allAnswers = $answer->findAllWhereOrderBy("id DESC", "questionid = ?", $id);
 
-        foreach($allAnswers as $answer) {
+        foreach ($allAnswers as $answer) {
             $user = new User();
             $user->setDb($this->di->get("dbqb"));
             $userInfo = $user->find('id', $answer->userId);
@@ -191,7 +191,7 @@ class QuestionController implements ContainerInjectableInterface
             $comment = new Comment();
             $comment->setDb($this->di->get("dbqb"));
             $allComments = $comment->findAllWhere("questionid = ? and answerid = ?", [$id, $answer->id]);
-            foreach($allComments as $oneComment) {
+            foreach ($allComments as $oneComment) {
                 $user = new User();
                 $user->setDb($this->di->get("dbqb"));
                 $userInfo = $user->find('id', $oneComment->userId);
@@ -226,7 +226,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return object as a response object
      */
-    public function commentActionGet() : object
+    public function commentActionGet(): object
     {
         if (!$this->di->session->get('loggedIn')) {
             return $this->di->response->redirect("user/login");
@@ -278,7 +278,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function commentActionPost() : void
+    public function commentActionPost(): void
     {
         $id        = $this->di->session->get('loggedIn');
         $text        = $this->di->request->getPost("Kommentera");
@@ -312,7 +312,7 @@ class QuestionController implements ContainerInjectableInterface
      *
      * @return void
      */
-    public function acceptActionGet() : object
+    public function acceptActionGet(): object
     {
         $userId      = $this->di->session->get('loggedIn');
         $questId  = $this->di->request->getGet("questionId");
